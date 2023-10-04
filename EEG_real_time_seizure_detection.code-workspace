@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../resnet_tuh"
+		},
+		{
+			"path": "../TUH_EEG_2"
+		}
+	],
+	"settings": {}
+}

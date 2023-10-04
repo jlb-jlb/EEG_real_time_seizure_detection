@@ -311,7 +311,7 @@ def generate_training_data_leadwise_tuh_train_final(file):
         label_list_c.append(label_noref)   
 
     ############################# part 1: labeling  ###############################
-    label_file = open(file_name + "." + GLOBAL_DATA['label_type'], 'r') # EX) 00007235_s003_t003.tse or 00007235_s003_t003.tse_bi
+    label_file = open(file_name + "." + GLOBAL_DATA['label_type'], 'r') # EX) 00007235_s003_t003.tse or 00007235_s003_t003.tse_bi # GLOBAL_DATA['label_type'] = "tse" or "tse_bi"
     y = label_file.readlines()
     y = list(y[2:])
     y_labels = list(set([i.split(" ")[2] for i in y]))
@@ -767,7 +767,9 @@ def main(args):
                     'EEG C3', 'EEG C4', 'EEG CZ', 'EEG T3', 'EEG T4', 
                     'EEG P3', 'EEG P4', 'EEG O1', 'EEG O2', 'EEG T5', 'EEG T6', 'EEG PZ', 'EEG FZ']
 
-    eeg_data_directory = "$PATH_TO_EEG/{}".format(data_type)
+    # eeg_data_directory = "$PATH_TO_EEG/{}".format(data_type)
+    eeg_data_directory = "/home/joscha.l.bisping/TUH_EEG_DATA/edf/{}".format(data_type)
+
     # eeg_data_directory = "/mnt/aitrics_ext/ext01/shared/edf/tuh_final/{}".format(data_type)
     
     if label_type == "tse":
